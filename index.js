@@ -44,9 +44,9 @@ app.post('/send',urlencodedParser, (req, res)=>{
 
 
 app.get('/results', (req, res)=>{
-    User.find((err , user) => {
+    User.find((err, user) => {
       if(err)
-          return res.send({message: err})
+          return res.send({err})
       return res.send({message: 'successful', user})
   })
 })
