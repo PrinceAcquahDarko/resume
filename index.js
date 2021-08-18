@@ -9,7 +9,7 @@ let mongoose = require('mongoose');
 
 require('dotenv').config()
 
-const url = process.env.URL
+url =  "mongodb+srv://Darko:gospel333@cluster0.xbklg.mongodb.net/zuri?retryWrites=true&w=majority"
 
 mongoose.connect(url,  { useUnifiedTopology: true,  useNewUrlParser: true })
     .then((data) => console.log('connected to database successfully'))
