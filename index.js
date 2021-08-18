@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 let bodyParser = require('body-parser')
 const User = require('./model/model')
+let cors = require('cors')
 let mongoose = require('mongoose');
 
 
@@ -20,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 
 let urlencodedParser = bodyParser.urlencoded({ extended: false})
 
-
+app.use(cors())
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
