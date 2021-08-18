@@ -31,7 +31,7 @@ app.post('/send',urlencodedParser, (req, res)=>{
   user.save((err, user) => {
       if(err){
          console.log(err)
-         return res.send({message: 'an error occured'})
+         return res.send({message: err})
       }
          
       return res.send({message: 'successful'})
@@ -45,7 +45,7 @@ app.post('/send',urlencodedParser, (req, res)=>{
 app.get('/results', (req, res)=>{
     User.find((err , user) => {
       if(err)
-          return res.send({message: 'an error occured'})
+          return res.send({message: err})
       return res.send({message: 'successful', user})
   })
 })
