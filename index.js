@@ -10,14 +10,14 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3000;
 
 
-let urlencodedParser = bodyParser.urlencoded({ extended: false})
+app.use(bodyParser.urlencoded({ extended: false}))
 
 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
 
-app.post('/send',urlencodedParser, (req, res)=>{
+app.post('/send',(req, res)=>{
     console.log(req.body)
 
     const output = `
