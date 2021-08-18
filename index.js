@@ -29,9 +29,11 @@ app.post('/send',urlencodedParser, (req, res)=>{
   console.log(req.body)
   const user = new User(req.body)
   user.save((err, user) => {
-      if(err)
-          console.log(err)
-          return res.send({message: 'an error occured'})
+      if(err){
+         console.log(err)
+         return res.send({message: 'an error occured'})
+      }
+         
       return res.send({message: 'successful'})
       
 
